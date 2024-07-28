@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingItemsService } from '../services/shopping-items.service';
-import { AlertButtonType, alertMessage, alertType, ItemListType } from '../services/constants';
+import { alertMessage, alertType, ItemListType } from '../services/constants';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-tab-sliding',
+  templateUrl: './tab-sliding.page.html',
+  styleUrls: ['./tab-sliding.page.scss'],
 })
-export class Tab1Page implements OnInit {
+export class TabSlidingPage implements OnInit {
 
   public items: ItemListType[] = [];
   public isCheck: boolean = false;
-  
+
   constructor(
     public shoppingItemsService: ShoppingItemsService
   ) {
@@ -42,13 +42,12 @@ export class Tab1Page implements OnInit {
         text: 'Cancel',
         role: 'cancel',
         handler: () => {
-          console.log('Cancel clicked');
+          alert.dismiss();
         }
       }
     ];
     document.body.appendChild(alert);
     await alert.present();
-    this.loadItems();
   }
 
   toggleChecked(item: ItemListType) {
