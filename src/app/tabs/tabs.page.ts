@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ShoppingItemsService } from '../services/shopping-items.service';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-tabs',
@@ -9,7 +10,8 @@ import { ShoppingItemsService } from '../services/shopping-items.service';
 export class TabsPage {
 
   constructor(
-    public shoppingItemsService: ShoppingItemsService
+    public shoppingItemsService: ShoppingItemsService,
+    public translationService: TranslationService
   ) {}
 
 }

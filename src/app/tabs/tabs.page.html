@@ -3,22 +3,22 @@
   <ion-tab-bar slot="bottom">
     <ion-tab-button *ngIf="!shoppingItemsService.listSlide" tab="tab-list" href="/tabs/tab-list">
       <ion-icon aria-hidden="true" name="list-outline"></ion-icon>
-      <ion-label>Lista de compra</ion-label>
+      <ion-label>{{ translationService.getTranslation('shoppingList') }}</ion-label>
     </ion-tab-button>
 
     <ion-tab-button *ngIf="shoppingItemsService.listSlide" tab="tab-sliding" href="/tabs/tab-sliding">
       <ion-icon aria-hidden="true" name="list-outline"></ion-icon>
-      <ion-label>Lista de compra slide</ion-label>
+      <ion-label>{{ translationService.getTranslation('shoppingListSlide') }}</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab2" href="/tabs/tab2">
       <ion-icon aria-hidden="true" name="add-circle-outline"></ion-icon>
-      <ion-label>Añadir item</ion-label>
+      <ion-label>{{ translationService.getTranslation('addItem') }}</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="settings" href="/tabs/settings">
       <ion-icon aria-hidden="true" name="settings-outline"></ion-icon>
-      <ion-label>Opciones</ion-label>
+      <ion-label>{{ translationService.getTranslation('options') }}</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 

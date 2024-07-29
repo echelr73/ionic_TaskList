@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingItemsService } from '../services/shopping-items.service';
 import { alertMessage, alertType, ItemListType } from '../services/constants';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-tab-sliding',
@@ -13,7 +14,8 @@ export class TabSlidingPage implements OnInit {
   public isCheck: boolean = false;
 
   constructor(
-    public shoppingItemsService: ShoppingItemsService
+    public shoppingItemsService: ShoppingItemsService,
+    public translationService: TranslationService
   ) {
   }
 
@@ -27,18 +29,18 @@ export class TabSlidingPage implements OnInit {
 
   async removeItem(item: ItemListType) {
     const alert = document.createElement('ion-alert');
-    alert.header = alertType.Delete;
-    alert.message = alertMessage.Delete;
+    alert.header = this.translationService.getAlertType('delete');
+    alert.message = this.translationService.getMessage('delete');
     alert.buttons = [
       {
-        text: 'Delete',
+        text: this.translationService.getButtons("deleteButton"),
         role: 'delete',
         handler: () => {
           this.shoppingItemsService.removeItem(item);
         }
       },
       {
-        text: 'Cancel',
+        text: this.translationService.getButtons("cancelButton"),
         role: 'cancel',
         handler: () => {
           alert.dismiss();

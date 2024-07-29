@@ -1,14 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Añadir item
+      {{ translationService.getTranslation('addItem') }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-item>
-    <ion-input label="Item:"type="text" [(ngModel)]="name" name="item"></ion-input>
+    <ion-input label="Item:" type="text" [(ngModel)]="name" name="item"></ion-input>
     <ion-button (click)="addItem()" [disabled]="!name">
       <ion-icon name="add-outline"></ion-icon>
     </ion-button>

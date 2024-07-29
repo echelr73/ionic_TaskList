@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { alertButtons, AlertButtonType, alertMessage, alertType, ItemListType } from './constants';
 import { AlertController } from '@ionic/angular/providers/alert-controller';
+import { TranslationService } from './translation.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class ShoppingItemsService {
   private _listSlide: boolean = false;
 
   constructor(
+    public translationService: TranslationService
   ) { }
 
   set listSlide(value: boolean) {
@@ -46,10 +48,10 @@ export class ShoppingItemsService {
     return this.items.some(existingItem => existingItem.name === name.trim());
   }
 
-  public async alert(header: alertType, message: alertMessage, buttons: AlertButtonType) {
+  public async alert(header: keyof typeof alertType, message: keyof typeof alertMessage, buttons: AlertButtonType) {
     const alert = document.createElement('ion-alert');
-    alert.header = header;
-    alert.message = message;
+    alert.header = this.translationService.getAlertType(header);
+    alert.message = this.translationService.getMessage(message);
     alert.buttons = alertButtons[buttons];
     document.body.appendChild(alert);
     await alert.present();

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Mi lista de compras
+      {{ translationService.getTranslation('myShoppingList') }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
 
   <ion-item lines="none" class="ion-text-center" *ngIf="this.shoppingItemsService.isEmpty">
-    <ion-label color="medium">No hay items</ion-label>
+    <ion-label color="medium">{{ translationService.getTranslation('noItems') }}</ion-label>
   </ion-item>
     
     <ion-list>
