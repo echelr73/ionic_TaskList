@@ -21,7 +21,6 @@ export class Tab2Page {
 
       this.shoppingItemsService.addItem(this.name);
       this.shoppingItemsService.alert(alertType.Success, alertMessage.Success, 'Ok');
-      console.log(this.shoppingItemsService.items);
       this.name = "";
     }else{
       this.shoppingItemsService.alert(alertType.Error, alertMessage.Error, 'Ok');

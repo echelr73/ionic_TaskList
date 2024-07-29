@@ -22,7 +22,6 @@ export class Tab1Page implements OnInit {
   }
 
   loadItems() {
-    // Asegúrate de que este método devuelva una lista de ítems con una propiedad 'checked'
     this.items = this.shoppingItemsService.getItems(); 
   }
 
@@ -42,7 +41,7 @@ export class Tab1Page implements OnInit {
         text: 'Cancel',
         role: 'cancel',
         handler: () => {
-          console.log('Cancel clicked');
+          alert.dismiss();
         }
       }
     ];
@@ -52,8 +51,7 @@ export class Tab1Page implements OnInit {
   }
 
   toggleChecked(item: ItemListType) {
-    // Aquí puedes manejar el cambio del estado checked si es necesario
-    this.shoppingItemsService.updateItem(item); // Asegúrate de tener un método para actualizar el estado del ítem
+    this.shoppingItemsService.updateItem(item);
   }
 
 }
