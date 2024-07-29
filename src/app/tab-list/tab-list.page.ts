@@ -3,11 +3,11 @@ import { ShoppingItemsService } from '../services/shopping-items.service';
 import { AlertButtonType, alertMessage, alertType, ItemListType } from '../services/constants';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-tab-list',
+  templateUrl: 'tab-list.page.html',
+  styleUrls: ['tab-list.page.scss']
 })
-export class Tab1Page implements OnInit {
+export class TabListPage implements OnInit {
 
   public items: ItemListType[] = [];
   public isCheck: boolean = false;
@@ -31,14 +31,14 @@ export class Tab1Page implements OnInit {
     alert.message = alertMessage.Delete;
     alert.buttons = [
       {
-        text: 'Delete',
+        text: 'Borrar',
         role: 'delete',
         handler: () => {
           this.shoppingItemsService.removeItem(item);
         }
       },
       {
-        text: 'Cancel',
+        text: 'Cancelar',
         role: 'cancel',
         handler: () => {
           alert.dismiss();

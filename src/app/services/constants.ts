@@ -1,13 +1,13 @@
 export enum alertType {
-    Success = 'Success!',
+    Success = 'Completado!',
     Error = 'Error!',
-    Delete = 'Delete?'
+    Delete = 'Eliminar?'
 };
 
 export enum alertMessage {
-    Success = 'Item added successfully',
-    Error = 'Item already exists',
-    Delete = 'Do you want to delete this item?'
+    Success = 'El item se agrego correctamente',
+    Error = 'El item ya existe',
+    Delete = 'Quieres borrar este item?'
 };
 
 export const alertButtons = {
